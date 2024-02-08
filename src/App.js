@@ -1,9 +1,15 @@
-import Demo1 from './components/Demo1';
+import NavBar from './components/NavBar';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
       <h3 align="center"> React Material UI Demo</h3>
-      <Demo1/>
+      
+      <Router>
+        <NavBar/>
+      </Router>
+      
 
     </div>
   );

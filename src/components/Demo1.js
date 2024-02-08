@@ -14,7 +14,15 @@ export default function Demo1() {
   };
 
   const addproduct = () => {
-    setProductList([...productlist, pname]);
+    if(pname.length>0){
+      setProductList([...productlist, pname]);
+      setpname("");
+    }
+    else{
+      alert("Please enter product name");
+      document.getElementById("pname").focus()
+    }
+    
     //console.log(productlist);
 
   };
@@ -27,7 +35,7 @@ export default function Demo1() {
         '& > :not(style)': { m: 1, width: '25ch' },
       }}
       noValidate autoComplete="off" >
-      <TextField placeholder="Enter Product Name" id="outlined-basic" label="Enter Product name" variant="outlined" type="text" value={pname} onChange={handlepnameinput} required/>
+      <TextField placeholder="Enter Product Name" id="pname" label="Enter Product name" variant="outlined" type="text" value={pname} onChange={handlepnameinput} required/>
       
     </Box>
       
